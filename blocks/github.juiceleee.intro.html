@@ -49,7 +49,7 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role }}<h3 style="color:red;">{{ . | markdownify | emojify }}</h3>{{ end }}
+        {{ with $person.role }}<h3 style="color:black;">{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
         <h3 style="display:inline;">
@@ -88,7 +88,7 @@
   <div class="col-12 col-lg-8">
 
     {{/* Only display widget title in explicit instances of about widget, not in author pages. */}}
-    {{ with $block.content.title }}<h3>{{ . | markdownify | emojify }}</h3>{{ end }}
+    {{ with $block.content.title }}<h2>{{ . | markdownify | emojify }}</h2>{{ end }}
 
     {{ with $person_page.Content }}
     <div class="article-style">
