@@ -43,12 +43,16 @@
           {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
         <li>
-            <h2 style="font-size:large;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></h2>
-            <h2 style="font-size:large;text-align:left;">{{ $author }}</h2>
+            <p style="font-size:large;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></p>
+            <br>
+            <p style="font-size:large;text-align:left;">{{ $author }}</p>
+            <br>
 
             {{ if $aw }}
-            <h2 style="font-size:large;text-align:left;"><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></h2>
+            <p style="font-size:large;text-align:left;"><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></p>
             {{ end }}
+
+            <br>
             
             {{ if $link }}
             <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines"></i> Paper</button>
@@ -62,7 +66,7 @@
             <button class="btn" onclick="location.href='{{ $video | safeURL }}'"><i class="fa-solid fa-film"></i> Video</button>
             {{ end }}
 
-            <br>
+            <br><br>
 
             
         </li>
