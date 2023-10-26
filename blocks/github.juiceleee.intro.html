@@ -52,12 +52,13 @@
         {{ with $person.role }}<h3 style="color:black;display:inline;">{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
-        <h3 style="display:inline;">
-          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <span style="display:inline;">{{ .name }}</span>
+        <h3>
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+          <span>{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
+
       </div>
 
       <ul class="network-icon" aria-hidden="true">
@@ -77,7 +78,7 @@
         {{ end }}
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} small-icon"></i>
           </a>
         </li>
         {{ end }}
