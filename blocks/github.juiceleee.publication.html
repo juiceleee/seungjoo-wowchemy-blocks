@@ -46,16 +46,18 @@
             <h2 style="font-size:large;text-align:left;">{{ $author }}</h2>
 
             {{ if $aw }}
-            <h2 style="font-size:large;text-align:left;"><i class="fa-solid fa-trophy"></i><b>{{ $aw }}</b></h2>
+            <h2 style="font-size:large;text-align:left;"><i class="fa-solid fa-trophy"></i><b>&nsbp;{{ $aw }}</b></h2>
             {{ end }}
             
             {{ if $link }}
-            <button class="btn"><i class="fa-solid fa-file-lines fa-sm"></i> Paper</button>
+            <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines fa-sm"></i> Paper</button>
             {{ end }}
             
             {{ if $website }}
-            <button class="btn"><i class="fa-solid fa-house fa-sm"></i> Website</button>
+            <button class="btn" onclick="location.href='{{ $website | safeURL }}'"><i class="fa-solid fa-house fa-sm"></i> Website</button>
             {{ end }}
+
+            <br>
 
             
         </li>
