@@ -49,7 +49,9 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role_bs }}<h3 style="display:inline;color:black;"><i class="fa-solid fa-building-columns fa-sm"></i>{{ . | markdownify | emojify }}</h3>{{ end }}
+        {{ with $person.role_bs }}<h3 style="display:inline;color:black;">
+          <i class="fa-solid fa-building-columns fa-sm"></i>
+          &nbsp;{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations_bs }}
         <h3 style="display:inline;">
@@ -59,7 +61,11 @@
         </h3>
         {{ end }}
 
-        {{ with $person.role }}<h3 style="color:black;"><i class="fa-solid fa-building-columns fa-sm"></i>{{ . | markdownify | emojify }}</h3>{{ end }}
+        <br>
+
+        {{ with $person.role }}<h3 style="color:black;display:inline;">
+          <i class="fa-solid fa-building-columns fa-sm"></i>
+          &nbsp;{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
         <h3 style="display:inline;">
