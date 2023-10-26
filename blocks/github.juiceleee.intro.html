@@ -49,22 +49,22 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role_bs }}<h3 style="display:inline;">{{ . | markdownify | emojify }}</h3>{{ end }}
+        {{ with $person.role_bs }}<h3 style="display:inline;color:black;"><i class="fa-solid fa-building-columns fa-sm"></i>{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations_bs }}
         <h3 style="display:inline;">
           {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <i class="fa-solid fa-building-columns fa-sm"></i><span style="display:inline;">{{ .name }}</span>
+          <span style="display:inline;">{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
 
-        {{ with $person.role }}<h3 style="display:inline;">{{ . | markdownify | emojify }}</h3>{{ end }}
+        {{ with $person.role }}<h3 style="color:black;"><i class="fa-solid fa-building-columns fa-sm"></i>{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
         <h3 style="display:inline;">
           {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <i class="fa-solid fa-building-columns fa-sm"></i><span style="display:inline;">{{ .name }}</span>
+          <span style="display:inline;">{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
