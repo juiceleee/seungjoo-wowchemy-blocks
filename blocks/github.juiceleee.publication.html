@@ -32,6 +32,7 @@
         {{ $venue := .venue }}
         {{ $author := .author }}
         {{ $link := .pdf }}
+        {{ $website := .website}}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -42,6 +43,10 @@
         <li>
             <h2 style="font-size:large;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></h2>
             <h2 style="font-size:large;text-align:left;">{{ $author }}</h2>
+            
+            {{ if $website }}
+            <button class="btn"><i class="fa-solid fa-house fa-2xs"></i> Website</button>
+
         </li>
         {{ end }}
       </ul>
