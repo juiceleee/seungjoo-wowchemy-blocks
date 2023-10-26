@@ -52,9 +52,9 @@
         {{ with $person.role }}<h3 style="color:black">{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
-        <h3 style="display:inline">
-          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline">{{ end }}
-          <span style="display:inline">{{ .name }}</span>
+        <h3 style="display:inline;">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
+          <span style="display:inline;">{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
