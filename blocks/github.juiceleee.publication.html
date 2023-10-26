@@ -33,6 +33,7 @@
         {{ $author := .author }}
         {{ $link := .pdf }}
         {{ $website := .website}}
+        {{ $aw := .award}}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -43,11 +44,20 @@
         <li>
             <h2 style="font-size:large;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></h2>
             <h2 style="font-size:large;text-align:left;">{{ $author }}</h2>
+
+            {{ if $aw }}
+            <h2 style="font-size:large;text-align:left;"><i class="fa-solid fa-trophy"></i><b>{{ $aw }}</b></h2>
+            {{ end }}
+            
+            {{ if $link }}
+            <button class="btn"><i class="fa-solid fa-file-lines fa-sm"></i> Paper</button>
+            {{ end }}
             
             {{ if $website }}
-            <button class="btn"><i class="fa-solid fa-house fa-xs"></i> Website</button>
+            <button class="btn"><i class="fa-solid fa-house fa-sm"></i> Website</button>
             {{ end }}
 
+            
         </li>
         {{ end }}
       </ul>
