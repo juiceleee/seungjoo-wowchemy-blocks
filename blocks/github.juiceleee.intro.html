@@ -54,7 +54,7 @@
         {{ range $person.organizations_bs }}
         <h3 style="display:inline;">
           {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <span style="display:inline;">{{ &nbsp;.name }}</span>
+          <span style="display:inline;">&nbsp;{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
@@ -64,7 +64,7 @@
         {{ range $person.organizations }}
         <h3 style="display:inline;">
           {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <span style="display:inline;">{{ &nbsp;.name }}</span>
+          <span style="display:inline;">&nbsp;{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
