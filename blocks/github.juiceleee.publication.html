@@ -6,11 +6,42 @@
 {{ $page := .wcPage }}
 {{ $block := .wcBlock }}
 
+{{ $author := "" }}
+{{ if .author }}
+  {{ $author = .author }}
+{{ else }}
+  {{ $author = $block.content.username }}
+{{end}}
+
+{{ $person_page_path := (printf "/authors/%s" $author) }}
+{{ $person_page := site.GetPage $person_page_path }}
+{{ if not $person_page }}
+  {{ errorf "Could not find an author page at `%s`. Please check the value of `author` in your About widget and create an associated author page if one does not already exist. See https://wowchemy.com/docs/page-builder/#about " $person_page_path }}
+{{end}}
+{{ $person := $person_page.Params }}
+{{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
+{{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
+
 <div class="row">
     <h2>Publications</h2>
 </div>
 <div class="row">
-    <b>[CHI'22] MyDJ: Sensing Food Intakes with an Attachable on Your Eyeglass Frame</b>
-    <br>
-    Jaemin Shin, <b>Seungjoo Lee</b>, Taesik Gong, Hyungjun Yoon, Hyunchul Roh, Andrea Bianchi, and Sung-Ju Lee
+    <ul class="network-icon" aria-hidden="true">
+        {{ range $person.paper }}
+        {{ $name := .name }}
+        {{ $venue := .venue }}
+        {{ $author := .author }}
+        {{ $link := .pdf }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <li>
+            [{{ $venue }}] {{ $name }} {{ $author }}
+        </li>
+        {{ end }}
+      </ul>
 </div>
