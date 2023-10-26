@@ -106,6 +106,10 @@
     {{/* Only display widget title in explicit instances of about widget, not in author pages. */}}
     {{ with $block.content.title }}<h2><b>{{ . | markdownify | emojify }}</b></h2>{{ end }}
 
+    <br>
+    {{with $person.interests}} <h3>{{ . | markdownify | emojify }}</h3>{{end}}
+    <br>
+
     {{ with $person_page.Content }}
     <div class="article-style">
       {{ . }}
