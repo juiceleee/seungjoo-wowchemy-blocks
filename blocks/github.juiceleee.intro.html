@@ -49,7 +49,7 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role }}<h3 style="color:black;">{{ . | markdownify | emojify }}</h3>{{ end }}
+        {{ with $person.role }}<h3 style="color:black;display:inline;">{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
         <h3 style="display:inline;">
