@@ -49,18 +49,15 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role }}
-        {{ $role := . | markdownify | emojify }}
-        <h3 style="color:black">
-          {{ $role }} at 
-          {{ range $person.organizations }}
-            {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
-            <span>{{ .name }}</span>
-            {{ if .url }}</a>{{ end }}
-            {{ if not @last }}, {{ end }}
-          {{ end }}
+        {{ with $person.role }}<h3 style="color:black">{{ . | markdownify | emojify }}</h3>{{ end }}
+
+        {{ range $person.organizations }}
+        <h3>
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline">{{ end }}
+          <span>{{ .name }}</span>
+          {{ if .url }}</a>{{ end }}
         </h3>
-      {{ end }}
+        {{ end }}
       </div>
 
       <ul class="network-icon" aria-hidden="true">
