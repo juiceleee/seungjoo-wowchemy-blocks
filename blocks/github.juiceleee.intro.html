@@ -49,30 +49,16 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role_bs }}<h3 style="display:inline;color:black;">
+        {{ with $person.role }}<h4 style="color:black;display:inline;">
           <i class="fa-solid fa-building-columns fa-sm"></i>
-          &nbsp;{{ . | markdownify | emojify }}</h3>{{ end }}
-
-        {{ range $person.organizations_bs }}
-        <h3 style="display:inline;">
-          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <span style="display:inline;">&nbsp;{{ .name }}</span>
-          {{ if .url }}</a>{{ end }}
-        </h3>
-        {{ end }}
-
-        <br>
-
-        {{ with $person.role }}<h3 style="color:black;display:inline;">
-          <i class="fa-solid fa-building-columns fa-sm"></i>
-          &nbsp;{{ . | markdownify | emojify }}</h3>{{ end }}
+          &nbsp;{{ . | markdownify | emojify }}</h4>{{ end }}
 
         {{ range $person.organizations }}
-        <h3 style="display:inline;">
+        <h4 style="display:inline;">
           {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
           <span style="display:inline;">&nbsp;{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
-        </h3>
+        </h4>
         {{ end }}
       </div>
 
@@ -106,7 +92,7 @@
     {{/* Only display widget title in explicit instances of about widget, not in author pages. */}}
     {{ with $block.content.title }}<h2><b>{{ . | markdownify | emojify }}</b></h2>{{ end }}
 
-    {{with $person.interests}} <h5>{{ . | markdownify | emojify }}</h5>{{end}}
+    {{with $person.interests}} <h6>{{ . | markdownify | emojify }}</h6>{{end}}
 
     {{ with $person_page.Content }}
     <div class="article-style">
