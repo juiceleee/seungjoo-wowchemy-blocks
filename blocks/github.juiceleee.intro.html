@@ -30,7 +30,7 @@
       {{ if site.Params.features.avatar.gravatar }}
       <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}" src="https://s.gravatar.com/avatar/{{ md5 $person.email }}?s=270')" alt="{{$person_page.Title}}">
       {{ else if $avatar }}
-      {{ $avatar_image := $avatar.Fill "270x405 Center" }}
+      {{ $avatar_image := $avatar.Fill "270x410 Center" }}
       <img class="avatar {{if eq $avatar_shape "square"}}avatar-square{{else}}avatar-circle{{end}}"
            width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}"
            src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
@@ -52,13 +52,12 @@
         {{ with $person.role }}<h3 style="color:black;display:inline;">{{ . | markdownify | emojify }}</h3>{{ end }}
 
         {{ range $person.organizations }}
-        <h3>
-          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
-          <span>{{ .name }}</span>
+        <h3 style="display:inline;">
+          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
+          <span style="display:inline;">{{ .name }}</span>
           {{ if .url }}</a>{{ end }}
         </h3>
         {{ end }}
-
       </div>
 
       <ul class="network-icon" aria-hidden="true">
