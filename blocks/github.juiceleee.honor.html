@@ -35,10 +35,16 @@
                 {{ $org := .org }}
                 {{ $date := .date }}
                 <li>
-                    <p style="font-size:1.5vw;text-align:left;"><b>{{ $name }}</b></p>
+                    <div class="article-style">
+                        <b>{{$name}}</b>
+                        <br>
+                        {{ $exp }}, <i>{{ $org }}</i>, {{ $date }}
+                        <br>
+                    </div>
+                    <!-- <p style="font-size:1.5vw;text-align:left;"><b>{{ $name }}</b></p>
                     <br>
                     <p style="font-size:1vw;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
-                    <br>
+                    <br> -->
                     
                 </li>
                 {{ end }}
