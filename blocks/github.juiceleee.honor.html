@@ -23,23 +23,25 @@
 {{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
 
 <div class="row">
-    <h2>Honors</h2>
+    <div class="col-12 col-lg-4">
+        <h2>Honors</h2>
 
-    <div class="article-style">
-        <ul>
-            {{ range $person.honor }}
-            {{ $name := .name }}
-            {{ $exp := .exp }}
-            {{ $org := .org }}
-            {{ $date := .date }}
-            <li>
-                <p style="font-size:large;text-align:left;"><b>{{ $name }}</b></p>
-                <br>
-                <p style="font-size:14px;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
-                <br>
-                
-            </li>
-            {{ end }}
-          </ul>
+        <div class="article-style">
+            <ul>
+                {{ range $person.honor }}
+                {{ $name := .name }}
+                {{ $exp := .exp }}
+                {{ $org := .org }}
+                {{ $date := .date }}
+                <li>
+                    <p style="font-size:large;text-align:left;"><b>{{ $name }}</b></p>
+                    <br>
+                    <p style="font-size:14px;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
+                    <br>
+                    
+                </li>
+                {{ end }}
+            </ul>
+        </div>
     </div>
 </div>
