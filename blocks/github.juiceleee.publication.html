@@ -45,18 +45,16 @@
           {{ else if in (slice "http" "https") $scheme }}
             {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
           {{ end }}
+
           <li>
-              <p style="font-size:5vw;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></p>
-              <br>
-              <p style="font-size:3vw;text-align:left;">{{ $author }}</p>
-              <br>
+            <div class="article-style">
+              <h5> <b> [{{ $venue }}] {{ $name }} </b></h5>
+              <h6 style="font-weight:normal;">{{ $author }}</h6>
 
               {{ if $aw }}
-              <p style="font-size:3vw;text-align:left;"><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></p>
+              <h6><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></h6>
               {{ end }}
 
-              <br>
-              
               {{ if $link }}
               <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines"></i> Paper</button>
               {{ end }}
@@ -68,7 +66,9 @@
               {{ if $video }}
               <button class="btn" onclick="location.href='{{ $video | safeURL }}'"><i class="fa-solid fa-film"></i> Video</button>
               {{ end }}
-              
+
+            </div>
+                       
           </li>
           {{ end }}
         </ul>
