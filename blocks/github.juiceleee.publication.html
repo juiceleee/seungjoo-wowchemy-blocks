@@ -23,50 +23,55 @@
 {{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
 
 <div class="row">
+  <div class="col-12">
+    
     <h2>Publications</h2>
-</div>
-<div class="row">
-    <ul>
-        {{ range $person.paper }}
-        {{ $name := .name }}
-        {{ $venue := .venue }}
-        {{ $author := .author | safeHTML }}
-        {{ $link := .pdf }}
-        {{ $website := .website}}
-        {{ $video := .video }}
-        {{ $aw := .award}}
-        {{ $scheme := (urls.Parse $link).Scheme }}
-        {{ $target := "" }}
-        {{ if not $scheme }}
-          {{ $link = .link | relLangURL }}
-        {{ else if in (slice "http" "https") $scheme }}
-          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
-        {{ end }}
-        <li>
-            <p style="font-size:large;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></p>
-            <br>
-            <p style="font-size:14px;text-align:left;">{{ $author }}</p>
-            <br>
+    <br><br>
+    
+    <div class="article-style">
+      <ul>
+          {{ range $person.paper }}
+          {{ $name := .name }}
+          {{ $venue := .venue }}
+          {{ $author := .author | safeHTML }}
+          {{ $link := .pdf }}
+          {{ $website := .website}}
+          {{ $video := .video }}
+          {{ $aw := .award}}
+          {{ $scheme := (urls.Parse $link).Scheme }}
+          {{ $target := "" }}
+          {{ if not $scheme }}
+            {{ $link = .link | relLangURL }}
+          {{ else if in (slice "http" "https") $scheme }}
+            {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+          {{ end }}
+          <li>
+              <p style="font-size:large;text-align:left;"><b>[{{ $venue }}] {{ $name }}</b></p>
+              <br>
+              <p style="font-size:14px;text-align:left;">{{ $author }}</p>
+              <br>
 
-            {{ if $aw }}
-            <p style="font-size:14px;text-align:left;"><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></p>
-            {{ end }}
+              {{ if $aw }}
+              <p style="font-size:14px;text-align:left;"><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></p>
+              {{ end }}
 
-            <br>
-            
-            {{ if $link }}
-            <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines"></i> Paper</button>
-            {{ end }}
-            
-            {{ if $website }}
-            <button class="btn" onclick="location.href='{{ $website | safeURL }}'"><i class="fa-solid fa-house"></i> Website</button>
-            {{ end }}
+              <br>
+              
+              {{ if $link }}
+              <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines"></i> Paper</button>
+              {{ end }}
+              
+              {{ if $website }}
+              <button class="btn" onclick="location.href='{{ $website | safeURL }}'"><i class="fa-solid fa-house"></i> Website</button>
+              {{ end }}
 
-            {{ if $video }}
-            <button class="btn" onclick="location.href='{{ $video | safeURL }}'"><i class="fa-solid fa-film"></i> Video</button>
-            {{ end }}
-            
-        </li>
-        {{ end }}
-      </ul>
+              {{ if $video }}
+              <button class="btn" onclick="location.href='{{ $video | safeURL }}'"><i class="fa-solid fa-film"></i> Video</button>
+              {{ end }}
+              
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
 </div>
