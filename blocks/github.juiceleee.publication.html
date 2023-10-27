@@ -51,10 +51,10 @@
             <h6 style="font-weight:normal;margin:10px;text-align:left;">{{ $author }}</h6>
 
             {{ if $aw }}
-            <h6>&nbsp;&nbsp;<i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></h6>
+            <h6><i class="fa-solid fa-trophy"></i><b>&nbsp;{{ $aw }}</b></h6>
             {{ end }}
 
-            &nbsp;&nbsp;
+            
             {{ if $link }}
             <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines"></i> Paper</button>
             {{ end }}
