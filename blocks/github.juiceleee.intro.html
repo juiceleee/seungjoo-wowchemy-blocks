@@ -31,7 +31,7 @@
       <img class="avatar">
       {{ else if $avatar }}
       {{ $avatar_image := $avatar}}
-      <img class="avatar"
+      <img
            width="2400" height="3500"
            src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
       {{ end }}
