@@ -30,7 +30,7 @@
       {{ if site.Params.features.avatar.gravatar }}
       <img class="avatar">
       {{ else if $avatar }}
-      {{ $avatar_image := $avatar.Fill "400x583" }}
+      {{ $avatar_image := $avatar}}
       <img width="400" height="583"
            src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
       {{ end }}
