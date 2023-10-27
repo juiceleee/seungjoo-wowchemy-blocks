@@ -32,7 +32,7 @@
       {{ else if $avatar }}
       {{ $avatar_image := $avatar.Fill "2400x3500 Center" }}
       <img class="avatar"
-           width="{{ $avatar_image.Width }}" height="{{ $avatar_image.Height }}"
+           width="2400" height="3500"
            src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
       {{ end }}
 
