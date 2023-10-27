@@ -31,7 +31,9 @@
       <img class="avatar">
       {{ else if $avatar }}
       {{ $avatar_image := $avatar}}
-      <img width="300" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
+      <p style="text-align:center;">
+        <img width="300" src="{{ $avatar_image.RelPermalink }}" alt="{{$person_page.Title}}">
+      </p>
       {{ end }}
 
       <div class="portrait-title">
