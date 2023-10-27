@@ -27,26 +27,24 @@
         <h2>Honors</h2>
         <br><br>
 
-        <div class="article-style">
-            <ul>
-                {{ range $person.honor }}
-                {{ $name := .name }}
-                {{ $exp := .exp }}
-                {{ $org := .org }}
-                {{ $date := .date }}
-                <li>
-                    <div class="article-style">
-                        <h5> <b>{{.name}}</b> </h5>
-                        <h6 style="font-weight:normal;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</h6>
-                    </div>
-                    <!-- <p style="font-size:1.5vw;text-align:left;"><b>{{ $name }}</b></p>
-                    <br>
-                    <p style="font-size:1vw;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
-                    <br> -->
-                    
-                </li>
-                {{ end }}
-            </ul>
-        </div>
+        <ul>
+            {{ range $person.honor }}
+            {{ $name := .name }}
+            {{ $exp := .exp }}
+            {{ $org := .org }}
+            {{ $date := .date }}
+            <li>
+                <div class="article-style">
+                    <h5> <b>{{.name}}</b> </h5>
+                    <h6 style="font-weight:normal;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</h6>
+                </div>
+                <!-- <p style="font-size:1.5vw;text-align:left;"><b>{{ $name }}</b></p>
+                <br>
+                <p style="font-size:1vw;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
+                <br> -->
+                
+            </li>
+            {{ end }}
+        </ul>
     </div>
 </div>
