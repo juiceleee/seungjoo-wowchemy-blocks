@@ -1,19 +1,4 @@
 /* Add your block style here */
-.btn {
-    background-color: DodgerBlue; /* Blue background */
-    font-family: Arial, Helvetica, sans-serif;
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 8px 12px; /* Some padding */
-    font-size: small; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-  }
-  
-  /* Darker background on mouse-over */
-  .btn:hover {
-    background-color: RoyalBlue;
-  }
-
   br {
     display: block; /* makes it have a width */
     content: ""; /* clears default height */
