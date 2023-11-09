@@ -56,7 +56,7 @@
 
             
             {{ if $link }}
-            <button class="btn" onclick="location.href='{{ $link | safeURL }}' {{ $target | safeHTMLAttr }}"><i class="fa-solid fa-file-lines"></i> Report</button>
+            <button class="btn" onclick="location.href='{{ $link | safeURL }}'"><i class="fa-solid fa-file-lines"></i> Report</button>
             {{ end }}
             
             {{ if $website }}
