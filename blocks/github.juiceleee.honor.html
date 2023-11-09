@@ -30,7 +30,7 @@
         <ul>
             {{ range $person.honor }}
             {{ $name := .name }}
-            {{ $exp := .exp }}
+            {{ $exp := .exp | safeHTML}}
             {{ $org := .org }}
             {{ $date := .date }}
             <li>
