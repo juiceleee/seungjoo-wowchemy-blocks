@@ -31,7 +31,7 @@
     <h3 style="text-align:left;"><b>Conference papers</b></h3>
   </div>
   <div class="row">
-  <ul>
+    <ul>
       {{ range $person.paper }}
       {{ $name := .name }}
       {{ $venue := .venue }}
@@ -79,13 +79,13 @@
       </li>
       {{ end }}
     </ul>
-
-  <br><br>
+  </div>
 
   <div class="row">
     <h3 style="text-align:left;"><b>Demo/Workshop papers</b></h3>
   </div>
-  <ul>
+  <div class="row">
+    <ul>
       {{ range $person.demo }}
       {{ $name := .name }}
       {{ $venue := .venue }}
@@ -129,4 +129,5 @@
       </li>
       {{ end }}
     </ul>
+  </div>
 </div>
