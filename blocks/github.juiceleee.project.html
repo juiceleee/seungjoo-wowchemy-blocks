@@ -22,12 +22,12 @@
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
 
-<div class="row">
-  <div class="col-12">
+<div class="container">
+  <div class="row">
     
     <h2 style="text-align:left;"><b>{{$block.content.title}}</b></h2>
-    <br><br>
-
+  </div>
+  <div class="row">
     <ul>
         {{ range $person.project }}
         {{ $name := .name }}

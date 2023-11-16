@@ -22,29 +22,30 @@
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
 
-<div class="row">
-    <div class="col-12">
-        <h2 style="text-align:left;"><b>Honors</b></h2>
-        <br><br>
+<div class="container">
+  <div class="row">
+      <h2 style="text-align:left;"><b>Honors</b></h2>
+  </div>
+  <div class="row">
 
-        <ul>
-            {{ range $person.honor }}
-            {{ $name := .name }}
-            {{ $exp := .exp | safeHTML}}
-            {{ $org := .org }}
-            {{ $date := .date }}
-            <li>
-                <div class="article-style">
-                    <h5 style="text-align:left;"> <b>{{.name}}</b> </h5>
-                    <h6 style="font-weight:normal;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</h6>
-                </div>
-                <!-- <p style="font-size:1.5vw;text-align:left;"><b>{{ $name }}</b></p>
-                <br>
-                <p style="font-size:1vw;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
-                <br> -->
-                
-            </li>
-            {{ end }}
-        </ul>
-    </div>
+    <ul>
+        {{ range $person.honor }}
+        {{ $name := .name }}
+        {{ $exp := .exp | safeHTML}}
+        {{ $org := .org }}
+        {{ $date := .date }}
+        <li>
+            <div class="article-style">
+                <h5 style="text-align:left;"> <b>{{.name}}</b> </h5>
+                <h6 style="font-weight:normal;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</h6>
+            </div>
+            <!-- <p style="font-size:1.5vw;text-align:left;"><b>{{ $name }}</b></p>
+            <br>
+            <p style="font-size:1vw;text-align:left;">{{ $exp }}, <i>{{ $org }}</i>, {{ $date }}</p>
+            <br> -->
+            
+        </li>
+        {{ end }}
+    </ul>
+  </div>
 </div>
