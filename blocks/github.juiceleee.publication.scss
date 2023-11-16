@@ -15,13 +15,13 @@
     color: white;
   }
 
-#publicationul.no-bullets {
+ul.no-bullets {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-#publicationli.menu-item:not(:last-child){
+li.menu-item:not(:last-child){
   margin-bottom: 3px;
 }
 
