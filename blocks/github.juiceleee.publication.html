@@ -38,6 +38,7 @@
         {{ $website := .website}}
         {{ $video := .video }}
         {{ $aw := .award}}
+        {{ $img := ($person_page.Resources.ByType "image").GetMatch "*.img*"}}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -47,6 +48,9 @@
         {{ end }}
 
         <li>
+          <div class="col-12">
+            <img width="350" src="{{ $img.RelPermalink }}" alt="{{$name}}">
+          </div>
           <div class="article-style">
             <h5 style="text-align:left;"> <b> [{{ $venue }}] {{ $name }} </b></h5>
             <h6 style="font-weight:normal;text-align:left;">{{ $author }}</h6>
