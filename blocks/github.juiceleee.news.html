@@ -37,8 +37,8 @@
         {{ $exp := .exp | safeHTML}}
         {{ $date := .date }}
         <tr>
-            <td style="text-align:left;">&#x2022; {{ $date }}</td>
-            <td style="text-align:left;">{{ $exp }}</td>
+            <td style="text-align:left;"><h4>&#x2022; {{ $date }}</h4></td>
+            <td style="text-align:left;"><h4>{{ $exp }}</h4></td>
         </tr>
         {{ end }}
     </table>
