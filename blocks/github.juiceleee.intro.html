@@ -51,17 +51,10 @@
           {{- end -}}
         </h2>
 
-        {{ with $person.role }}<h5 style="color:black;display:inline;">
+        {{ with $person.role }}<h5 style="color:black;">
           <i class="fa-solid fa-building-columns fa-sm"></i>
           &nbsp;{{ . | markdownify | emojify }}</h5>{{ end }}
 
-        {{ range $person.organizations }}
-        <h5 style="display:inline;">
-          {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener" style="display:inline;">{{ end }}
-          <span style="display:inline;">&nbsp;{{ .name }}</span>
-          {{ if .url }}</a>{{ end }}
-        </h5>
-        {{ end }}
       </div>
 
       <ul class="network-icon" aria-hidden="true">
