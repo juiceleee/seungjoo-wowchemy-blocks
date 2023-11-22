@@ -40,6 +40,7 @@
         {{ $img := .img}}
         {{ $slide := .slide }}
         {{ $page := .page}}
+        {{ $code := .code}}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -73,6 +74,10 @@
 
               {{ if $slide }}
               <button class="btn" onclick="location.href='{{ $slide | safeURL }}'"><i class="fa-solid fa-file-powerpoint"></i> Slides</button>
+              {{ end }}
+
+              {{ if $code }}
+              <button class="btn" onclick="location.href='{{ $slide | safeURL }}'"><i class="fa-solid fa-code"></i> Code</button>
               {{ end }}
 
               {{ if $video }}
