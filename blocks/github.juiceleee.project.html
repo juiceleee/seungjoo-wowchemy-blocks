@@ -39,6 +39,7 @@
         {{ $aw := .award}}
         {{ $img := .img}}
         {{ $slide := .slide }}
+        {{ $page := .page}}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -53,7 +54,7 @@
               <img width="300" src="{{ $img }}" alt="{{$name}}">
             </div>
             <div class="col-12 col-lg-8">
-              <h5 style="text-align:left;"> <b> {{ $name }} </b></h5>
+              <h5 style="text-align:left;"> <b> <a href="{{$page}}" class="titlehref" >{{ $name }} </a> </b></h5>
               <h6 style="font-weight:normal;text-align:left;"><i>{{ $desc }}</i></h6>
               <h6 style="font-weight:normal;text-align:left;">{{ $author }}</h6>
 
