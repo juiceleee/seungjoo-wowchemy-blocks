@@ -34,6 +34,17 @@
     justify-content: center;
 }
 
+.titlehref {
+  text-decoration: none;
+  color: inherit;
+}
+
+.titlehref:hover {
+  text-decoration: underline;
+  color: royalblue;
+  cursor: pointer;
+}
+
 //   br {
 //     display: block; /* makes it have a width */
 //     content: ""; /* clears default height */
