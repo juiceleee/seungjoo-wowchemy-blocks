@@ -96,6 +96,7 @@
       {{ $website := .website}}
       {{ $video := .video }}
       {{ $aw := .award}}
+      {{ $img := .img}}
       {{ $scheme := (urls.Parse $link).Scheme }}
       {{ $target := "" }}
       {{ if not $scheme }}
