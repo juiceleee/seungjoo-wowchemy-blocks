@@ -25,6 +25,13 @@
   margin-bottom: 20px;
 }
 
+#imgdiv {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 //   br {
 //     display: block; /* makes it have a width */
 //     content: ""; /* clears default height */
