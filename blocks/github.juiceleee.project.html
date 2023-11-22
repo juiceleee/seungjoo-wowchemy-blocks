@@ -38,6 +38,7 @@
         {{ $video := .video }}
         {{ $aw := .award}}
         {{ $img := .img}}
+        {{ $slide := .slide }}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -67,6 +68,10 @@
               
               {{ if $website }}
               <button class="btn" onclick="location.href='{{ $website | safeURL }}'"><i class="fa-solid fa-house"></i> Website</button>
+              {{ end }}
+
+              {{ if $slide }}
+              <button class="btn" onclick="location.href='{{ $slide | safeURL }}'"><i class="fa-solid fa-file-powerpoint"></i> Slides</button>
               {{ end }}
 
               {{ if $video }}

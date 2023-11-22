@@ -38,6 +38,7 @@
       {{ $author := .author | safeHTML }}
       {{ $link := .pdf }}
       {{ $website := .website}}
+      {{ $slide := .slide }}
       {{ $video := .video }}
       {{ $aw := .award}}
       {{ $img := .img}}
@@ -71,6 +72,10 @@
             <button class="btn" onclick="location.href='{{ $website | safeURL }}'"><i class="fa-solid fa-house"></i> Website</button>
             {{ end }}
 
+            {{ if $slide }}
+            <button class="btn" onclick="location.href='{{ $slide | safeURL }}'"><i class="fa-solid fa-file-powerpoint"></i> Slides</button>
+            {{ end }}
+
             {{ if $video }}
             <button class="btn" onclick="location.href='{{ $video | safeURL }}'"><i class="fa-solid fa-film"></i> Video</button>
             {{ end }}
@@ -93,6 +98,7 @@
       {{ $venue := .venue }}
       {{ $author := .author | safeHTML }}
       {{ $link := .pdf }}
+      {{ $slide := .slide }}
       {{ $website := .website}}
       {{ $video := .video }}
       {{ $aw := .award}}
@@ -125,6 +131,10 @@
             
             {{ if $website }}
             <button class="btn" onclick="location.href='{{ $website | safeURL }}'"><i class="fa-solid fa-house"></i> Website</button>
+            {{ end }}
+
+            {{ if $slide }}
+            <button class="btn" onclick="location.href='{{ $slide | safeURL }}'"><i class="fa-solid fa-file-powerpoint"></i> Slides</button>
             {{ end }}
 
             {{ if $video }}
