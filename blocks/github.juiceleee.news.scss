@@ -10,9 +10,11 @@
     border: none;
     max-width:100%;
     white-space:nowrap;
+    overflow-x: scroll;
 }
 
 #newstable th{
     border: none;
+    overflow-x: scroll;
 }
 
