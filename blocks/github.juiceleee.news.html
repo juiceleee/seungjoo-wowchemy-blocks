@@ -27,20 +27,22 @@
       <h2 style="text-align:left;margin-top:0px;padding-top:0px;"><b>News</b></h2>
   </div>
   <div class="row">
-    <table cellspacing="0" cellpadding="0" id="newstable">
-        <tr id="newstable">
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        {{ range $person.news }}
-        {{ $exp := .exp | safeHTML}}
-        {{ $date := .date }}
-        <tr id="newstable">
-            <td id="newstable" style="text-align:left;"><h4 style="padding:0px;margin:0px;">&#x2022; {{ $date }}</h4></td>
-            <td id="newstable" style="text-align:left;"><h4 style="padding:0px;margin:0px;">{{ $exp }}</h4></td>
-        </tr>
-        {{ end }}
-    </table>
+    <div class="col-auto-12 col-lg-4">
+      <table cellspacing="0" cellpadding="0" id="newstable">
+          <tr id="newstable">
+              <th></th>
+              <th></th>
+              <th></th>
+          </tr>
+          {{ range $person.news }}
+          {{ $exp := .exp | safeHTML}}
+          {{ $date := .date }}
+          <tr id="newstable">
+              <td id="newstable" style="text-align:left;"><h4 style="padding:0px;margin:0px;">&#x2022; {{ $date }}</h4></td>
+              <td id="newstable" style="text-align:left;"><h4 style="padding:0px;margin:0px;">{{ $exp }}</h4></td>
+          </tr>
+          {{ end }}
+      </table>
+  </div>
   </div>
 </div>
