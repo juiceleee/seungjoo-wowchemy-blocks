@@ -3,18 +3,19 @@
     table-layout: auto;
     width: auto;
     height: auto;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 #newstable td{
     border: none;
     max-width:100%;
-    white-space:nowrap;
-    overflow-x: scroll;
+    white-space:normal;
+    word-wrap: break-word;
+    overflow-x: auto;
 }
 
 #newstable th{
     border: none;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
