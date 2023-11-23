@@ -28,7 +28,7 @@
   </div>
   <div class="col-12">
 
-      <!-- <table cellspacing="0" cellpadding="0" id="newstable">
+      <table cellspacing="0" cellpadding="0" id="newstable">
           <tr id="newstable">
               <th></th>
               <th></th>
@@ -42,18 +42,7 @@
               <td id="newstable" style="text-align:left;"><h4 style="padding:0px;margin:0px;">{{ $exp }}</h4></td>
           </tr>
           {{ end }}
-      </table> -->
+      </table>
 
-      <ul>
-        {{ range $person.news }}
-        {{ $exp := .exp | safeHTML}}
-        {{ $date := .date }}
-        <li> <h4 style="padding:5px;margin:0px;">
-          <span class="tabdate">
-          {{ $date }}<span class="tab"></span>
-        </span> {{ $exp }}
-        </h4> </li>
-        {{ end }}
-      </ul>
   </div>
 </div>
