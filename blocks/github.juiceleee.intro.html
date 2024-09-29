@@ -59,11 +59,13 @@
 
       <ul class="network-icon" aria-hidden="true">
         {{ range $person.social }}
-        {{ $pack := or .icon_pack "fas" }}
+        <!-- {{ $pack := or .icon_pack "fas" }}
         {{ $pack_prefix := $pack }}
         {{ if in (slice "fab" "fas" "far" "fal") $pack }}
           {{ $pack_prefix = "fa" }}
-        {{ end }}
+        {{ end }} -->
+        {{ $pack := .icon_pack }}
+        {{ $icon := .icon }}
         {{ $link := .link }}
         {{ $name := .name }}
         {{ $scheme := (urls.Parse $link).Scheme }}
@@ -75,7 +77,8 @@
         {{ end }}
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} small-icon"></i> {{ $name }}
+            <!-- <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} small-icon"></i> {{ $name }} -->
+            <i class="{{ $pack }} {{ $icon }}"></i> {{ $name }}
           </a>
         </li>
         {{ end }}
