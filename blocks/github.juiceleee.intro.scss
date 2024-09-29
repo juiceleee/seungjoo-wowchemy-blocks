@@ -3,13 +3,13 @@ img {
     margin: auto;
 }
 
-.linked-icon i {
+.network-icon i {
     text-decoration: none;
     color: black; /* Default color */
     transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth color transition */
   }
   
-  .linked-icon i:hover {
-    color:royalblue; /* Color on hover */
+  .network-icon i:hover {
+    color: royalblue; /* Color on hover */
     text-decoration: underline;
   }
