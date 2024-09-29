@@ -65,6 +65,7 @@
           {{ $pack_prefix = "fa" }}
         {{ end }}
         {{ $link := .link }}
+        {{ $name := .name }}
         {{ $scheme := (urls.Parse $link).Scheme }}
         {{ $target := "" }}
         {{ if not $scheme }}
@@ -74,7 +75,7 @@
         {{ end }}
         <li>
           <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}">
-            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} small-icon"></i>
+            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} small-icon"></i> {{ $name }}
           </a>
         </li>
         {{ end }}
