@@ -3,13 +3,29 @@ img {
     margin: auto;
 }
 
-.network-icon i {
-    text-decoration: none;
-    color: black; /* Default color */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth color transition */
+.linked-icon {
+    list-style: none; /* Remove bullets from the list */
+    padding: 0;
+    margin: 0;
   }
   
-  .network-icon i:hover {
-    color: royalblue; /* Color on hover */
-    text-decoration: underline;
+  .linked-icon li {
+    display: inline-block; /* Align items horizontally */
+    margin-right: 15px; /* Add space between items */
   }
+  
+  .linked-icon a {
+    text-decoration: none; /* Remove underline by default */
+    color: black; /* Default color */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth color and text-decoration transition */
+  }
+  
+  .linked-icon a:hover {
+    color: royalblue; /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  .linked-icon i {
+    margin-right: 8px; /* Add space between icon and text */
+  }
+  
