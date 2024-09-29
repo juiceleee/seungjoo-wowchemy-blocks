@@ -95,7 +95,7 @@
 
     {{ with $person_page.Content }}
     <div class="article-style">
-      {{ . | markdownify}}
+      {{ . | safeHTML}}
     </div>
     {{ end }}
 

@@ -33,7 +33,7 @@
   <div class="row">
     <ul id="publicationul">
       {{ range $person.paper }}
-      {{ $name := .name }}
+      {{ $name := .name | safeHTML}}
       {{ $venue := .venue }}
       {{ $author := .author | safeHTML }}
       {{ $link := .pdf }}
