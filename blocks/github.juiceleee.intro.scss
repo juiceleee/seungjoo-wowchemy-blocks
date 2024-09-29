@@ -17,15 +17,15 @@ img {
   .linked-icon a {
     text-decoration: none; /* Remove underline by default */
     color: black; /* Default color */
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth color and text-decoration transition */
+    transition: color 0.3s ease; /* Smooth color and text-decoration transition */
   }
   
   .linked-icon a:hover {
     color: royalblue; /* Change color on hover */
-    text-decoration: underline; /* Add underline on hover */
   }
   
   .linked-icon i {
-    margin-right: 8px; /* Add space between icon and text */
+    margin-right: 4px; /* Add space between icon and text */
+    vertical-align: middle;
   }
   
