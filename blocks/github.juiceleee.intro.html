@@ -51,9 +51,8 @@
           {{- end -}}
         </h2>
 
-        <!-- {{ with $person.role }}<h5 style="color:black;">
-          <i class="fa-solid fa-building-columns fa-sm"></i>
-          &nbsp;{{ . | markdownify | emojify }}</h5>{{ end }} -->
+        {{ with $person.role }}<h5 style="color:black;">
+          {{ . | markdownify | emojify }}</h5>{{ end }}
 
       </div>
 
