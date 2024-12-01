@@ -1,40 +1,28 @@
-#newstable {
+#newstable{
     border: none;
     table-layout: auto;
     width: auto;
     height: auto;
     overflow-x: auto;
-    margin: 0; /* Remove any margins */
-    padding: 0; /* Remove any padding */
+    margin: 0;
+    padding: 0;
 }
 
-#newstable td, #newstable th {
-    border: none;
-    padding: 0; /* Remove padding in cells */
-    margin: 0;  /* Remove margin */
-    vertical-align: top; /* Align content to the top of each cell */
-}
-
-#newstable td:first-child {
+#newstable td:first-child{
     white-space: nowrap;
     border: none;
 }
 
-#newstable td:nth-child(2) {
+#newstable td:nth-child(2){
     border: none;
-    max-width: 100%;
-    white-space: normal;
+    max-width:100%;
+    white-space:normal;
     word-wrap: break-word;
     overflow-x: auto;
 }
 
-#newstable th {
+#newstable th{
     border: none;
     overflow-x: auto;
 }
 
-/* If you have h5 tags inside td, reset their padding and margin */
-#newstable h5 {
-    margin: 0;
-    padding: 0;
-}
