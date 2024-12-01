@@ -4,8 +4,6 @@
     width: auto;
     height: auto;
     overflow-x: auto;
-    margin: 0;
-    padding: 0;
 }
 
 #newstable td:first-child{
@@ -24,5 +22,10 @@
 #newstable th{
     border: none;
     overflow-x: auto;
+}
+
+#newstable h5{
+    margin: 0;
+    padding: 0;
 }
 
