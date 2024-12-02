@@ -21,8 +21,8 @@
 {{ $person := $person_page.Params }}
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
-{{ $img := .img}}
-{{ $desc := .desc}}
+{{ $person.img := .img}}
+{{ $person.desc := .desc}}
 
 <div class="container">
     <div class="row">
