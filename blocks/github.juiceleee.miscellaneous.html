@@ -21,8 +21,6 @@
 {{ $person := $person_page.Params }}
 {{ $avatar := ($person_page.Resources.ByType "image").GetMatch "*avatar*" }}
 {{ $avatar_shape := site.Params.features.avatar.shape | default "square" }}
-{{ $person.img := .img}}
-{{ $person.desc := .desc}}
 
 <div class="container">
     <div class="row">
@@ -30,8 +28,13 @@
     </div>
     <div class="row">
         <div class="col-12" style="text-align:center;">
+            {{ range $person.miscallaneous }}
+            {{ $img := .img}}
+            {{ $name := .name }}
+            {{ $desc := .desc }}
             <img width="800" src="{{ $img }}" alt="{{$name}}" style="display:block; margin:auto;">
             <h5 style="margin-top:10px;">{{ $desc }}</h5>
+            {{end}}
         </div>
     </div>
 </div>
