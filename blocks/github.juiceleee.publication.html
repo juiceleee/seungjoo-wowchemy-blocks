@@ -27,22 +27,23 @@
     
     <h2 style="text-align:left;margin-top:0px;padding-top:0px;"><b>{{$block.content.title}}</b></h2>
   </div>
+
   <div class="row" style="margin-bottom:20px;">
-    <h3 style="text-align:left;"><b>Preprints</b></h3>
+    <h3 style="text-align:left;"><b>Conference papers</b></h3>
   </div>
-  <div class="row" style="display:block;">
+  <div class="row">
     <ul id="publicationul">
-      {{ range $person.preprint }}
-      {{ $name := .name }}
+      {{ range $person.paper }}
+      {{ $name := .name | safeHTML}}
       {{ $venue := .venue }}
       {{ $author := .author | safeHTML }}
       {{ $link := .pdf }}
-      {{ $slide := .slide }}
       {{ $website := .website}}
-      {{ $code := .code}}
+      {{ $slide := .slide }}
       {{ $video := .video }}
       {{ $aw := .award}}
       {{ $img := .img}}
+      {{ $code := .code}}
       {{ $scheme := (urls.Parse $link).Scheme }}
       {{ $target := "" }}
       {{ if not $scheme }}
@@ -51,13 +52,13 @@
         {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
       {{ end }}
 
-       <li id="publicationli">
+      <li id="publicationli">
         <div class="row" id="publicationdiv">
           <div class="col-auto-12 col-lg-4" id="imgdiv">
             <img width="300" src="{{ $img }}" alt="{{$name}}">
           </div>
           <div class="col-12 col-lg-8">
-            <h5 style="text-align:left;"> <b>{{ $name }} </b></h5>
+            <h5 style="text-align:left;"> <b> [{{ $venue }}] {{ $name }} </b></h5>
             <h6 style="font-weight:normal;text-align:left;">{{ $author }}</h6>
 
             {{ if $aw }}
@@ -94,21 +95,21 @@
   </div>
 
   <div class="row" style="margin-bottom:20px;">
-    <h3 style="text-align:left;"><b>Conference papers</b></h3>
+    <h3 style="text-align:left;"><b>Preprints</b></h3>
   </div>
-  <div class="row">
+  <div class="row" style="display:block;">
     <ul id="publicationul">
-      {{ range $person.paper }}
-      {{ $name := .name | safeHTML}}
+      {{ range $person.preprint }}
+      {{ $name := .name }}
       {{ $venue := .venue }}
       {{ $author := .author | safeHTML }}
       {{ $link := .pdf }}
-      {{ $website := .website}}
       {{ $slide := .slide }}
+      {{ $website := .website}}
+      {{ $code := .code}}
       {{ $video := .video }}
       {{ $aw := .award}}
       {{ $img := .img}}
-      {{ $code := .code}}
       {{ $scheme := (urls.Parse $link).Scheme }}
       {{ $target := "" }}
       {{ if not $scheme }}
@@ -117,13 +118,13 @@
         {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
       {{ end }}
 
-      <li id="publicationli">
+       <li id="publicationli">
         <div class="row" id="publicationdiv">
           <div class="col-auto-12 col-lg-4" id="imgdiv">
             <img width="300" src="{{ $img }}" alt="{{$name}}">
           </div>
           <div class="col-12 col-lg-8">
-            <h5 style="text-align:left;"> <b> [{{ $venue }}] {{ $name }} </b></h5>
+            <h5 style="text-align:left;"> <b>{{ $name }} </b></h5>
             <h6 style="font-weight:normal;text-align:left;">{{ $author }}</h6>
 
             {{ if $aw }}
